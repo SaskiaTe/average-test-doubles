@@ -18,16 +18,13 @@ const average: Average = new Average(fileAccess);
 
 switch (stat) {
   case "mean":
-    const mean = await average.computeMeanOfFile();
-    console.log(mean);
+    console.log(await average.computeMeanOfFile());
     break;
   case "median":
-    const median = await average.computeMedianOfFile();
-    console.log(median);
+    console.log(await average.computeMedianOfFile());
     break;
   case "mode":
-    const modes = await average.computeModeOfFile();
-    for (const m of modes) {
+    for (const m of await average.computeModeOfFile()) {
       console.log(m);
     }
     break;

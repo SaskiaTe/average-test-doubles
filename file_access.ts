@@ -2,7 +2,7 @@ export class FileAccess {
   constructor(private path: string) {}
 
   public async readNumbers() {
-    const numbers: Array<number> = new Array();
+    const numbers: Array<number> = [];
     const content: string = await Deno.readTextFile(this.path);
     const lines: Array<string> = content.split("\n");
     for (const line of lines) {
